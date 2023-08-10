@@ -35,7 +35,7 @@ app.get('/login',(req,res)=>{
 
 
 
-//!server running
+//!server running on port
 const port = process.env.PORT || 3000;
 app.listen(port,()=>{
     console.log(`server is running on ${port}`);
