@@ -19,28 +19,19 @@ require('./db/conn');
 app.use(require('./router/auth'));
 
 //! Routes
-app.get('/about',(req,res)=>{
-    res.send(`about page`)
-})
 
 app.get('/contact',(req,res)=>{
     
-    res.send(`contact page`)
-})
-
-app.get('/login',(req,res)=>{
-    res.send(`login page`)
+    res.send('contact page')
 })
 
 
 
 
-<<<<<<< HEAD
+
 //!server running on port
 
-=======
 //!server running on port 5000
->>>>>>> origin/new
 const port = process.env.PORT || 3000;
 app.listen(port,()=>{
     console.log(`server is running on ${port}`);

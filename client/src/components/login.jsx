@@ -43,26 +43,32 @@ export default function Login() {
   const [pass, setPass] = useState("")
 
   const handleSubmit = async(e)=>{
-        e.preventDefault();
-        const res = await fetch('/login',{
-          method:'POST',
-          credentials:'include',
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-             email:mail, password:pass
-          })
+    try {
+      e.preventDefault();
+      const res = await fetch('/login',{
+        method:'POST',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+           email:mail,
+          password:pass
         })
+      })
 
-        const data = await res.json();
-        if(res.status === 400 || res.status === 404 ||  res.status === 401 || !data){
-          window.alert(res.status);
-        }
-        else{
-          window.alert(res.status);
-          Navigate('/about')
-        }
+      const data = await res.json();
+      if( res.status === 403 || res.status === 404 ||  res.status === 401 || res.status === 204 || !data){
+        window.alert(res.status);
+      }
+      else{
+        window.alert(res.status);
+        Navigate('/')
+      }
+      
+    } catch (error) {
+      window.alert("empty field")
+    }
+       
   };
 
 

@@ -1,6 +1,7 @@
 const express = require('express');
 const User = require("../models/userSchema");
 const bcrypt = require("bcrypt");
+const Auth = require('../middleware/Auth')
 //! const jwt = require ('jsonwebtoken')
 
 
@@ -21,6 +22,12 @@ router.get('/', (req, res) => {
 router.post('/signup', async (req, res) => {
     try {
         const { name, email, phone, password, cpassword } = req.body;
+        // name = name.trim();
+        // email = email.trim();
+        // phone = phone.trim();
+        // password = password.trim();
+        // cpassword = cpassword.trim();
+
         const newUser = await User.findOne({ email: email });
         
         if (!name || !email || !phone || !password || !cpassword) {
@@ -42,7 +49,7 @@ router.post('/signup', async (req, res) => {
                     password,
                     cpassword
                 })
-
+                //! hashed password in user model--------->
                 const savedUser = await user.save();
                 console.log(savedUser)
                 res.status(201).json({ message: "registered successfully" });
@@ -51,7 +58,6 @@ router.post('/signup', async (req, res) => {
         else {
             return res.status(409).json({ error: "user existed" });
         }
-
     }
     catch {
         res.status(404).json({ error: "something went wrong" })
@@ -103,6 +109,16 @@ router.post('/login', async (req, res) => {
     }
 
 })
+
+
+//! About 
+
+router.get('/about',Auth,(req,res)=>{
+    res.status(200).send(req.rootUser)
+})
+
+
+
 
 module.exports = router;
 

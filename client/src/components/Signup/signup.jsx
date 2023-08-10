@@ -75,7 +75,7 @@ export default function Signup() {
       console.log("invalid")
     }
     else {
-      window.alert("registered")
+      window.alert("✅registered")
 
       console.log("successful")
 
