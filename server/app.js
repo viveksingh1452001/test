@@ -35,7 +35,7 @@ app.get('/login',(req,res)=>{
 
 
 
-//!server running branch commit
+//!server running on port 5000
 const port = process.env.PORT || 3000;
 app.listen(port,()=>{
     console.log(`server is running on ${port}`);
