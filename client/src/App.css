@@ -1,0 +1,195 @@
+:root{
+  --green: rgb(21, 232, 6);
+  --yellow: yellow;
+  --white: rgb(255, 255, 255);
+}
+
+.demo{
+  color: var(--green);
+  
+}
+.parentHome{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 100%;
+  background-color: var(--yellow);
+ 
+}
+
+.parentHome>h1{
+  font-weight: 700;
+}
+
+/* sign up */
+.signup{
+  background-color: var(--white);
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.signup-form{
+  height: calc(90vh - 100px);
+  width:  700px;
+  margin: 50px auto 50px auto;
+ 
+  
+}
+
+
+.element{
+   /* background-color: red; */
+   display: grid;
+   grid-template-columns: auto auto ;
+   
+}
+/* .item1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+} */
+
+.containers{
+  display: flex;
+  justify-content: center;
+  /* background-color: blue; */
+  width: 50vh;
+  height:calc(90vh - 100px);
+}
+
+
+
+img {
+  max-width: 100%;
+  height: auto;
+ 
+}
+
+
+.form-element{
+  
+  gap: 10px;
+   display: flex;
+  justify-content: center;
+   flex-direction: column;
+   
+}
+
+.item2{
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.form-field{
+  display: flex;
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+}
+
+.form-field>input{
+  width:100%;
+  height: 5vh;
+  margin: 0px 0px 0px 10px;
+  padding-left: 10px;
+  border-style:  none;
+  box-shadow: 1px -1px  gray inset;
+
+}
+
+.submit-button{
+  margin-top: 20px;
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+}
+
+#signup{
+  background-color: var(--green);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  width: 80px;
+  height: 40px;
+}
+
+.item1>h1{
+  width:100% ;
+  padding-left: 25px;
+  margin-bottom: 20px;
+  
+}
+
+
+
+@media (max-width:700px) {
+  .signup-form{
+   height: calc(90vh - 100px);
+   width:  350px;
+  }
+
+  .item2{
+   display: none;
+  }
+
+  .form-field>input{
+   width:70%;
+  }  
+ 
+ 
+}
+@media (max-width:900px) and (min-width: 701px) {
+  .signup-form{
+   height: calc(90vh - 100px);
+   
+  }
+
+  /* .item2{
+   display: none;
+  } */
+
+  .form-field>input{
+    width:100%;
+   } 
+
+  
+ 
+ 
+}
+
+
+.master{
+   
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+
+
+
+
+
+/* .form-element{
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   margin-left: 10px;
+   align-items: flex-start;
+}
+
+img {
+  max-width: 50%;
+  height: auto;
+} */
+
+
+
+
